@@ -1,0 +1,4 @@
+checkpoints/*
+.vscode/*
+.ipynb_checkpoints/*
+mask2former/modeling/pixel_decoder/*
