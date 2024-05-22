@@ -46,3 +46,30 @@ pip install -r requirements.txt
 cd mask2former/modeling/pixel_decoder/ops
 sh make.sh
 ```
+
+### Installation procedure for PathAI cluster
+- Initialize a 2 GPU pod using the `fm-dev` image
+- conda create --name mpformer python=3.10 -y
+- conda activate mpformer
+- pip install -r requirements.txt
+- conda install cudatoolkit=11.7 -c pytorch
+- pip install https://download.pytorch.org/whl/cu117/torch-2.0.1%2Bcu117-cp310-cp310-linux_x86_64.whl
+- pip install https://download.pytorch.org/whl/cu117/torchvision-0.15.2%2Bcu117-cp310-cp310-linux_x86_64.whl#sha256=1ee57f2bee878ad8574ea559bb7172c1cfaad168634fa738479e1fe3bdd7eaca
+- conda install -c conda-forge cudatoolkit-dev 
+- pip install -U opencv-python
+
+# Install Detectron2
+- pip install setuptools==69.5.1  
+- cd into the `detection2` folder
+- pip install -e .
+- pip install git+https://github.com/cocodataset/panopticapi.git
+- pip install git+https://github.com/mcordts/cityscapesScripts.git
+
+# Install mmcv-full
+- pip install -f https://download.openmmlab.com/mmcv/dist/cu117/torch1.9.0/index.html mmcv-full==1.3.17
+
+# Compile script for the pixel decoder.
+- pip install ninja
+- cd mask2former
+- cd mask2former/modeling/pixel_decoder/ops
+- sh make.sh
