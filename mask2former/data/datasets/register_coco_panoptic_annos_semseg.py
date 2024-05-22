@@ -11,19 +11,19 @@ from detectron2.utils.file_io import PathManager
 _PREDEFINED_SPLITS_COCO_PANOPTIC = {
     "coco_2017_train_panoptic": (
         # This is the original panoptic annotation directory
-        "coco/panoptic_train2017",
-        "coco/annotations/panoptic_train2017.json",
+        "/home/pathai/datasets/detectron2/coco/panoptic_train2017",
+        "/home/pathai/datasets/detectron2/coco/annotations/panoptic_train2017.json",
         # This directory contains semantic annotations that are
         # converted from panoptic annotations.
         # It is used by PanopticFPN.
         # You can use the script at detectron2/datasets/prepare_panoptic_fpn.py
         # to create these directories.
-        "coco/panoptic_semseg_train2017",
+        "/home/pathai/datasets/detectron2/coco/panoptic_semseg_train2017",
     ),
     "coco_2017_val_panoptic": (
-        "coco/panoptic_val2017",
-        "coco/annotations/panoptic_val2017.json",
-        "coco/panoptic_semseg_val2017",
+        "/home/pathai/datasets/detectron2/coco/panoptic_val2017",
+        "/home/pathai/datasets/detectron2/coco/annotations/panoptic_val2017.json",
+        "/home/pathai/datasets/detectron2/coco/panoptic_semseg_val2017",
     ),
 }
 
@@ -177,5 +177,5 @@ def register_all_coco_panoptic_annos_sem_seg(root):
         )
 
 
-_root = os.getenv("DETECTRON2_DATASETS", "datasets")
+_root = os.getenv("DETECTRON2_DATASETS", "/home/pathai/datasets/detectron2/")
 register_all_coco_panoptic_annos_sem_seg(_root)

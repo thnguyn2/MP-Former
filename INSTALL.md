@@ -73,3 +73,6 @@ sh make.sh
 - cd mask2former
 - cd mask2former/modeling/pixel_decoder/ops
 - sh make.sh
+
+# Set the path for the DETECTRON2 dataset
+`export DETECTRON2_DATASETS="/home/pathai/datasets/detectron2/"`
